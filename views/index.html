@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cobradores</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-2 shadow-sm">
+    <div class="container-fluid">
+        
+        <!-- 1. Logo a la izquierda -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="../assets/img/logo.png" alt="Anatod Logo" height="40" class="d-inline-block align-text-top me-2">
+        
+        </a>
+
+        <!-- 2. Botón hamburguesa -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar" aria-controls="menuNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 3. Contenedor del menú -->
+        <div class="collapse navbar-collapse" id="menuNavbar">
+            
+            <!-- 3 secciones centradas con íconos FA -->
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3 text-center">
+                <li class="nav-item">
+                    <a class="nav-link active fs-5 px-3" href="dashboard.html">
+                        <i class="fa-solid fa-house me-2"></i>Inicio
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-5 px-3" href="cobrar.html">
+                        <i class="fa-solid fa-hand-holding-dollar me-2"></i>Cobrar
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-5 px-3" href="clientes.html">
+                        <i class="fa-solid fa-users me-2"></i>Abonados
+                    </a>
+                </li>
+            </ul>
+
+            <!-- 4. Usuario y Cerrar Sesión con íconos FA (sin líneas encima) -->
+            <div class="d-flex align-items-center justify-content-center gap-3 mt-3 mt-lg-0">
+                <span class="navbar-text text-white fs-6">
+                    <i class="fa-solid fa-circle-user me-1"></i> <strong>Darian</strong>
+                </span>
+                <a href="../controllers/logout.php" class="btn btn-outline-light btn-sm px-3 py-2 fw-semibold">
+                    <i class="fa-solid fa-right-from-bracket me-1"></i> Cerrar sesión
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+<!-- CONTENEDOR PRINCIPAL TÁCTIL -->
+    <main class="container my-4">
+
+        <!-- Saludo y fecha rápida -->
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+            <div>
+                <h1 class="h3 fw-bold mb-0 text-dark">Panel de Trabajo</h1>
+                <small class="text-muted fs-6">Jornada de Cobranza en Curso</small>
+            </div>
+            <span class="badge bg-light text-dark border p-2 fs-6">
+                <i class="fa-regular fa-calendar me-1 text-primary"></i> Hoy
+            </span>
+        </div>
+
+        <!-- 1. ACCIONES PRINCIPALES (Botones grandes para dedos) -->
+        <div class="row g-3 mb-4">
+            <div class="col-12 col-md-6">
+                <a href="cobrar.html" class="btn btn-success btn-lg w-100 py-3 shadow-sm d-flex align-items-center justify-content-center gap-3">
+                    <i class="fa-solid fa-hand-holding-dollar fs-2"></i>
+                    <span class="fs-4 fw-bold">Nuevo Cobro</span>
+                </a>
+            </div>
+            <div class="col-12 col-md-6">
+                <a href="clientes.html" class="btn btn-primary btn-lg w-100 py-3 shadow-sm d-flex align-items-center justify-content-center gap-3">
+                    <i class="fa-solid fa-users fs-2"></i>
+                    <span class="fs-4 fw-bold">Buscar Abonado</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 2. MÉTRICAS DEL DÍA (Tarjetas de resumen claras) -->
+        <div class="row g-3 mb-4">
+            <!-- Total Recaudado -->
+            <div class="col-12 col-md-4">
+                <div class="card border-0 shadow-sm bg-white p-3 h-100">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="p-3 bg-success-subtle text-success rounded-3 fs-3">
+                            <i class="fa-solid fa-money-bill-wave"></i>
+                        </div>
+                        <div>
+                            <p class="text-muted mb-0 small text-uppercase fw-semibold">Recaudado Hoy</p>
+                            <h2 class="h3 fw-bold mb-0 text-success">$ 0,00</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cobros Realizados -->
+            <div class="col-6 col-md-4">
+                <div class="card border-0 shadow-sm bg-white p-3 h-100">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="p-3 bg-primary-subtle text-primary rounded-3 fs-3">
+                            <i class="fa-solid fa-receipt"></i>
+                        </div>
+                        <div>
+                            <p class="text-muted mb-0 small text-uppercase fw-semibold">Cobros Hechos</p>
+                            <h2 class="h3 fw-bold mb-0 text-dark">0</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abonados Pendientes de Visita -->
+            <div class="col-6 col-md-4">
+                <div class="card border-0 shadow-sm bg-white p-3 h-100">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="p-3 bg-warning-subtle text-warning-emphasis rounded-3 fs-3">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </div>
+                        <div>
+                            <p class="text-muted mb-0 small text-uppercase fw-semibold">Pendientes</p>
+                            <h2 class="h3 fw-bold mb-0 text-dark">0</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. ÚLTIMOS COBROS (Acceso directo a recibos recién cobrados) -->
+        <div class="card border-0 shadow-sm">
+            <div class="card-header bg-white py-3 border-0 d-flex justify-content-between align-items-center">
+                <h5 class="card-title fw-bold mb-0 text-secondary">
+                    <i class="fa-solid fa-clock me-2"></i>Últimos Cobros del Día
+                </h5>
+            </div>
+            
+            <!-- Lista táctil en vez de tabla rígida -->
+            <div class="list-group list-group-flush">
+                <div class="list-group-item py-3 text-center text-muted fs-6">
+                    <i class="fa-solid fa-inbox fs-4 d-block mb-2 text-secondary"></i>
+                    Aún no se registraron cobros en esta jornada.
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
